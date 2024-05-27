@@ -7,9 +7,6 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: environments/develop
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,20 +19,20 @@ jobs:
 
       - name: Format
         id: fmt
-        run: terraform fmt -check
+        run: terraform fmt -check -chdir=environments/develop
 
       - name: Init
         id: init
-        run: terraform init -chdir environments/develop
+        run: terraform init -chdir=environments/develop
 
       - name: Validate
         id: validate
-        run: terraform validate -no-color
+        run: terraform validate -no-color -chdir=environments/develop
 
       - name: Plan
         id: plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -no-color
+        run: terraform plan -no-color -chdir=environments/develop
         continue-on-error: true
 
       - name: Update Pull Request
@@ -74,4 +71,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -chdir=environments/develop
