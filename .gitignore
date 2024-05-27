@@ -1,0 +1,40 @@
+# Aws Binary
+aws
+
+# Aws Zip FIle
+awscliv2.zip
+
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude override files as they are typically used to override resources for local testing purposes
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore generated plan files
+*.tfplan
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Ignore backup files created by the editor or Terraform
+*.backup
+*.bak
+
+# Ignore lock files used by the provider plugin
+.terraform.lock.hcl
