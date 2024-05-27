@@ -19,20 +19,20 @@ jobs:
 
       - name: Format
         id: fmt
-        run: terraform fmt -check -chdir=environments/develop
+        run: terraform -chdir=environments/develop fmt -check
 
       - name: Init
         id: init
-        run: terraform init -chdir=environments/develop
+        run: terraform -chdir=environments/develop init
 
       - name: Validate
         id: validate
-        run: terraform validate -no-color -chdir=environments/develop
+        run: terraform -chdir=environments/develop validate -no-color
 
       - name: Plan
         id: plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -no-color -chdir=environments/develop
+        run: terraform -chdir=environments/develop plan -no-color
         continue-on-error: true
 
       - name: Update Pull Request
@@ -71,4 +71,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-        run: terraform apply -auto-approve -chdir=environments/develop
+        run: terraform -chdir=environments/develop apply -auto-approve
