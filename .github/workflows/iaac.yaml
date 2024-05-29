@@ -24,7 +24,7 @@ jobs:
 
       - name: Skip run
         run: |
-          exit 1
+          exit 0
 
       - name: Set environment variables
         id: vars
