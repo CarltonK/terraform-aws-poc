@@ -8,7 +8,7 @@ variable "cidr_block" {
   description = "Route"
 }
 
-variable "region" {
-  type        = string
-  description = "Region containing assets"
-}
+# variable "region" {
+#   type        = string
+#   description = "Region containing assets"
+# }

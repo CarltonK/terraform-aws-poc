@@ -7,7 +7,6 @@ resource "aws_vpc" "default-network" {
 resource "aws_subnet" "default_subnet" {
   vpc_id            = aws_vpc.default-network.id
   cidr_block        = var.cidr_block
-  availability_zone = var.region
   tags = {
     "name" = "${var.workspace}-subnet"
   }

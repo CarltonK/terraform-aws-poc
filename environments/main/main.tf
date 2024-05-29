@@ -8,5 +8,5 @@ module "ec2" {
   source     = "../../modules/ec2"
   workspace  = var.workspace
   cidr_block = var.cidr_block
-  region     = var.region
+  # region     = var.region
 }
