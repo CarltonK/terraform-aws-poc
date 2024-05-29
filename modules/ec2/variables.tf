@@ -11,7 +11,7 @@ variable "cidr_block" {
 variable "ami_id" {
   type        = string
   description = "ID of the Amazon Machine Image"
-  default     = "ami-0a1e9fbebda761cdc"
+  default     = "ami-09e647bf7a368e505"
 }
 
 variable "instance_machine_type" {
