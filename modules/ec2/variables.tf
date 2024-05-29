@@ -7,3 +7,8 @@ variable "cidr_block" {
   type        = string
   description = "Route"
 }
+
+variable "region" {
+  type        = string
+  description = "Region containing assets"
+}
