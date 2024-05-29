@@ -29,7 +29,7 @@ override.tf.json
 terraform.rc
 
 # Ignore sensitive variable files
-*.tfvars
+# *.tfvars
 *.tfvars.json
 
 # Ignore backup files created by the editor or Terraform
