@@ -1,5 +1,5 @@
 ## Installation
-    1. Install Terrafocrm on your PC - I find it easier to use terraform version manager - https://github.com/tfutils/tfenv
+    1. Install Terraform on your PC - I find it easier to use terraform version manager - https://github.com/tfutils/tfenv
     2. Install AWS Cli on your PC - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
     3. Configure aws cli using ```aws configure``` command
     4. Inputs for (2) above
@@ -11,5 +11,5 @@
 
 
 ## Terraform CLoud
-    1. Login to HCP Platrom
+    1. Login to HCP Platform
     2. 

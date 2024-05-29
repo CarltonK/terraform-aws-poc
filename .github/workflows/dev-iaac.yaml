@@ -70,9 +70,11 @@ jobs:
         run: exit 1
 
       - name: Trigger Terraform Cloud run
+        env:
+          TFC_TOKEN: ${{ secrets.TF_API_TOKEN }}
         run: |
           curl \
-          --header "Authorization: Bearer ${{ secrets.TF_API_TOKEN }}" \
+          --header "Authorization: Bearer $TFC_TOKEN" \
           --header "Content-Type: application/vnd.api+json" \
           --request POST \
           --data '{
