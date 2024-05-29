@@ -5,8 +5,8 @@ resource "aws_vpc" "default-network" {
 
 # Subnet
 resource "aws_subnet" "default_subnet" {
-  vpc_id            = aws_vpc.default-network.id
-  cidr_block        = var.cidr_block
+  vpc_id     = aws_vpc.default-network.id
+  cidr_block = var.cidr_block
   tags = {
     "name" = "${var.workspace}-subnet"
   }
@@ -66,11 +66,11 @@ resource "aws_security_group" "default-security-group" {
 
 # EC2 instance
 resource "aws_instance" "default-instance" {
-  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI for us-west-2
-  instance_type = "t2.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_machine_type
 
-  subnet_id                   = aws_subnet.default_subnet.id
-  vpc_security_group_ids      = [aws_security_group.default-security-group.id]
+  subnet_id              = aws_subnet.default_subnet.id
+  vpc_security_group_ids = [aws_security_group.default-security-group.id]
 
   tags = {
     Name = "${var.workspace}-Instance"
