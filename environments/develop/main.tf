@@ -4,8 +4,9 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-module "vpc" {
-  source     = "../../modules/vpc"
+module "ec2" {
+  source     = "../../modules/ec2"
   workspace  = var.workspace
   cidr_block = var.cidr_block
+  # region     = var.region
 }
