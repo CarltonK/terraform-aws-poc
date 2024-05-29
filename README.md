@@ -12,4 +12,8 @@
 
 ## Terraform CLoud
     1. Login to HCP Platform
-    2. 
+    
+
+## Workflow
+    1. Commit to Branch
+    2. This triggers a run in HCP
