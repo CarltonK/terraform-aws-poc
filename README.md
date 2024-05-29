@@ -12,8 +12,10 @@
 
 ## Terraform CLoud
     1. Login to HCP Platform
-    
+
 
 ## Workflow
     1. Commit to Branch
-    2. This triggers a run in HCP
+    2. This triggers a run in HCP depending on which workspace
+        develop branch = dev workspace
+        main branch = prod workspace
