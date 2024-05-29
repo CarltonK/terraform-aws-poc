@@ -69,6 +69,33 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-        run: terraform -chdir=environments/develop apply -auto-approve
+      - name: Trigger Terraform Cloud run
+        env:
+          TFC_TOKEN: ${{ secrets.TF_API_TOKEN }}
+        run: |
+          curl \
+          --header "Authorization: Bearer $TFC_TOKEN" \
+          --header "Content-Type: application/vnd.api+json" \
+          --request POST \
+          --data '{
+            "data": {
+              "attributes": {
+                "message": "Triggered via GitHub Actions",
+                "run_reason": "plan"
+              },
+              "type":"runs",
+              "relationships": {
+                "workspace": {
+                  "data": {
+                    "type": "workspaces",
+                    "id": "ws-g3vZ1yDjLHcuowLq"
+                  }
+                }
+              }
+            }
+          }' \
+          https://app.terraform.io/api/v2/runs
+
+      # - name: Terraform Apply
+      #   if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+      #   run: terraform -chdir=environments/develop apply -auto-approve
