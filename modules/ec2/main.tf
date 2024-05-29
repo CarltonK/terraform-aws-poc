@@ -9,6 +9,6 @@ resource "aws_subnet" "default_subnet" {
   cidr_block        = var.cidr_block
   availability_zone = var.region
   tags = {
-    "name" = var.workspace
+    "name" = "${var.workspace}-subnet"
   }
 }
