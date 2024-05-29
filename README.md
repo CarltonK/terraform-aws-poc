@@ -1,5 +1,5 @@
 ## Installation
-    1. Install Terrafocrm on your PC - I find it easier to use terraform version manager - https://github.com/tfutils/tfenv
+    1. Install Terraform on your PC - I find it easier to use terraform version manager - https://github.com/tfutils/tfenv
     2. Install AWS Cli on your PC - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
     3. Configure aws cli using ```aws configure``` command
     4. Inputs for (2) above
@@ -11,5 +11,11 @@
 
 
 ## Terraform CLoud
-    1. Login to HCP Platrom
-    2. 
+    1. Login to HCP Platform
+
+
+## Workflow
+    1. Commit to Branch
+    2. This triggers a run in HCP depending on which workspace
+        develop branch = dev workspace
+        main branch = prod workspace
