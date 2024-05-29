@@ -88,14 +88,10 @@ jobs:
                 "workspace": {
                   "data": {
                     "type": "workspaces",
-                    "id": "ws-g3vZ1yDjLHcuowLq"
+                    "id": "${{ secrets.DEV_WORKSPACE }}"
                   }
                 }
               }
             }
           }' \
           https://app.terraform.io/api/v2/runs
-
-      # - name: Terraform Apply
-      #   if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
-      #   run: terraform -chdir=environments/develop apply -auto-approve
